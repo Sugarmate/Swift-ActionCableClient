@@ -109,7 +109,7 @@ internal class JSONSerializer {
                   messageError = error
                 }
                 
-                return Message(channelIdentifier: channelIdentifier!,
+                return Message(channelIdentifier: channelIdentifier ?? "???",       // Fix crash caused by forced unwrap
                                actionName: messageActionName,
                                messageType: MessageType.message,
                                data: messageValue,
